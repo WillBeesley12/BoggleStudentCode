@@ -28,9 +28,8 @@ public class Boggle {
         visited[r][c] = true;
         // If this is a word that isn't already in goodWords, add it
         if (TST.lookup(word) == 1) {
-            if (!goodWords.contains(word)) {
-                goodWords.add(word);
-            }
+            goodWords.add(word);
+            TST.insert(word, 0);
         }
         // Go all four directions
         dfs(r + 1, c, word, board);
